@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    <title>Исполнитель</title>
+{% endblock head %}
+
+{% block content %}
+
+<div class="center">
+    <table>
+    <tbody>
+        <tr>
+            <th>Имя</th>
+            <td>{{ provider.name }}</td>
+        </tr>
+        <tr>
+            <th>Контактные данные</th>
+            <td>{{ provider.contact_data }}</td>
+        </tr>
+        <tr>
+            <th>Специализация</th>
+            <td>{{ provider.specialty }}</td>
+        </tr>
+        <tr>
+            <th>Дополнительная информация</th>
+            <td>{{ provider.info }}</td>
+        </tr>
+        <tr>
+            <th>Опыт в годах</th>
+            <td>{{ provider.experience_in_years }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<button onclick="window.location.href='{% url 'accounts:provider_update' %}'" class="edit-button">Редактировать</button>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    <title>Заказчик</title>
+{% endblock head %}
+
+{% block content %}
+
+<div class="center">
+    <table>
+    <tbody>
+        <tr>
+            <th>Имя</th>
+            <td>{{ customer.name }}</td>
+        </tr>
+        <tr>
+            <th>Контактные данные</th>
+            <td>{{ customer.contact_data }}</td>
+        </tr>
+        <tr>
+            <th>Специализация</th>
+            <td>{{ customer.specialty }}</td>
+        </tr>
+        <tr>
+            <th>Дополнительная информация</th>
+            <td>{{ customer.info }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<button onclick="window.location.href='{% url 'accounts:customer_update' %}'" class="edit-button">Редактировать</button>
+
+{% endblock content %}

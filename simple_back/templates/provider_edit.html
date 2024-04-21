@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <title>Исполнитель</title>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+        <link rel="stylesheet" href="{% static 'profile.css' %}">
+    {% endblock head %}
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'accounts:home' %}" class="logo">Наш сайт</a>
+        <nav>
+            <ul>
+                <li><a href="{% url 'accounts:provider' %}">Исполнитель</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block content %}
+    <div class="center">
+        <form method="post" class="profile-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    {% endblock content %}
+</body>
+
+</html>

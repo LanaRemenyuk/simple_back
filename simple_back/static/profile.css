@@ -1,0 +1,26 @@
+.center {
+    display: flex;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #003841;
+    color: white;
+    width: 20%; /* Уменьшение ширины первого столбца */
+}
+
+table tr:nth-child(even) {
+    background-color: #A4B6BA;
+}
+
+table tr:nth-child(odd) {
+    background-color: #A4B6BA;
+}
